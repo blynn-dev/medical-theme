@@ -1,0 +1,10 @@
+diff --git a/.gitignore b/.gitignore
+index baff153..42d8859 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -1,5 +1,4 @@
+ # Ignore configuration files that may contain sensitive information.
+-sites/*/settings*.php
+ 
+ # Ignore paths that contain user-generated content.
+ sites/*/files
