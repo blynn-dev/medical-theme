@@ -1,0 +1,14 @@
+<?php
+/**
+ * Alter contextual links on nodes to remove the destination parameter
+ * This allows custom contextual links for nodes to work properly.
+ * It also makes the editing process more consistent.
+ */
+function customcontextual_contextual_links_view_alter(&$element, $items) {
+	if (isset($element['#element']['#entity_type']) && $element['#element']['#entity_type'] == 'node') {
+		foreach ($element['#links'] as $key => $value) {
+			$element['#links'][$key]['query'] = array();
+		}
+	}
+}
+//*/

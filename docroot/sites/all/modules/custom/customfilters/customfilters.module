@@ -1,0 +1,38 @@
+<?php
+/**
+ * Custom filters to remove whitespace and incompatible characters
+ */
+function customfilters_filter_info() {
+	$filters['filter_whitespace'] = array(
+		'title' => t('Remove whitespace'),
+		'description' => t('Remove extra linebreaks, extra whitespace, and empty blocks.'),
+		'process callback' => '_customfilters_filter_whitespace_process',
+	);
+	$filters['filter_incompatiblecharacters'] = array(
+		'title' => t('Remove incompatible characters'),
+		'description' => t('Remove invisible characters that can cause problems with other filters. This filter must run before the <em>Correct faulty and chopped off HTML</em> filter.'),
+		'process callback' => '_customfilters_filter_invisiblecharacters_process',
+	);
+	return $filters;
+}
+
+function _customfilters_filter_whitespace_process($text, $filter) {
+	// Blocks containing only whitespace are removed
+	$text = preg_replace('/<(p|div|h2|h3|h4|h5|h6)\s*>(\xC2\xA0|\&nbsp\;|<br\s*\/?>|\s)*<\/\1\s*>/', '', $text);
+	// Whitespace at the start of a block is removed
+	$text = preg_replace('/<(p|div|h2|h3|h4|h5|h6)\s*>(\xC2\xA0|\&nbsp\;|<br\s*\/?>|\s)*/', '<\1>', $text);
+	// Whitespace at the end of a block is removed
+	$text = preg_replace('/(\xC2\xA0|\&nbsp\;|<br\s*\/?>|\s)*<\/(p|div|h2|h3|h4|h5|h6)\s*>/', '</\2>', $text);
+	// Multiple consecutive linebreaks are replaced with a single linebreak
+	$text = preg_replace('/(<br\s*\/?>(\xC2\xA0|\&nbsp\;|\s)*){2,}/', '<br />', $text);
+	// Multiple spaces are replaced with a single space
+	$text = preg_replace('/(\xC2\xA0|\&nbsp\;|\s){2,}/', ' ', $text);
+	return $text;
+}
+
+function _customfilters_filter_incompatiblecharacters_process($text, $filter) {
+	// Remove the ETX character, used as a line break in Photoshop
+	$text = str_replace('', '', $text);
+	return $text;
+}
+//*/

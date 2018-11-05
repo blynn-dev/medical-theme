@@ -1,0 +1,3 @@
+name = Custom module - text filters
+description = Adds text filters.
+core = 7.x
