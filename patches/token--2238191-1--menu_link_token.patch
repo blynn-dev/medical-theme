@@ -1,0 +1,43 @@
+From 558e6355ae268e52ba3101f82bca3bb961653e32 Mon Sep 17 00:00:00 2001
+From: Jonathan Jordan <jonathan@metaltoad.com>
+Date: Mon, 14 Apr 2014 13:04:01 -0700
+Subject: [PATCH] Issue #2238191 by jojonaloha: Node menu link tokens do not
+ work with OG Menu module and Workbench Moderation.
+
+---
+ token.module | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/token.module b/token.module
+index 926db6d..e08ffd2 100644
+--- a/token.module
++++ b/token.module
+@@ -1261,21 +1261,21 @@ function token_taxonomy_term_load_all_parents($tid) {
+  *   A menu link array from token_menu_link_load() or FALSE if a menu link was
+  *   not found.
+  *
+- * @see menu_node_prepare()
++ * @see node_object_prepare()
+  * @see token_menu_link_load()
+  */
+ function token_node_menu_link_load($node) {
+-  $cache = &drupal_static(__FUNCTIon__, array());
++  $cache = &drupal_static(__FUNCTION__, array());
+ 
+   if (!isset($cache[$node->nid])) {
+     $mlid = FALSE;
+ 
+     // Nodes do not have their menu links loaded via menu_node_load().
+     if (!isset($node->menu)) {
+-      // We need to clone the node as menu_node_prepare() may cause data loss.
++      // We need to clone the node as node_object_prepare() may cause data loss.
+       // @see http://drupal.org/node/1317926
+       $menu_node = clone $node;
+-      menu_node_prepare($menu_node);
++      node_object_prepare($menu_node);
+       $mlid = !empty($menu_node->menu['mlid']) ? $menu_node->menu['mlid'] : FALSE;
+     }
+     else {
+-- 
+1.8.5.2 (Apple Git-48)
+

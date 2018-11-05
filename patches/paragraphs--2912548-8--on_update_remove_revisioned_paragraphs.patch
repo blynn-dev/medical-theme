@@ -1,0 +1,33 @@
+diff --git a/paragraphs.module b/paragraphs.module
+index 4c1ce96..7520aaf 100644
+--- a/paragraphs.module
++++ b/paragraphs.module
+@@ -781,13 +781,13 @@ function paragraphs_field_update($entity_type, $entity, $field, $instance, $lang
+   $items_original = !empty($entity->original->{$field['field_name']}[$langcode]) ? $entity->original->{$field['field_name']}[$langcode] : array();
+   $original_by_id = array_flip(paragraphs_field_item_to_ids($items_original));
+ 
+-  foreach ($items as $item) {
+-    unset($original_by_id[$item['value']]);
+-  }
++  $remove = array_filter($items_original, function ($val) use ($original_by_id) {
++    return !array_key_exists($val['value'], $original_by_id);
++  });
+ 
+   // If there are removed items, care about deleting the item entities.
+-  if ($original_by_id) {
+-    $ids = array_flip($original_by_id);
++  if (!empty($remove)) {
++    $ids = array_keys($remove);
+ 
+     // If we are creating a new revision, the old-items should be kept but get
+     // marked as archived now.
+@@ -799,7 +799,8 @@ function paragraphs_field_update($entity_type, $entity, $field, $instance, $lang
+     }
+     else {
+       // Delete unused paragraph items now.
+-      foreach (paragraphs_item_load_multiple($ids) as $item) {
++      foreach ($remove as $remove_item) {
++        $item = paragraphs_item_revision_load($remove_item['revision_id']);
+         $item->setHostEntity($entity_type, $entity, $langcode, FALSE);
+         $item->deleteRevision(TRUE);
+       }
