@@ -1,0 +1,19 @@
+// Base styles
+
+// Box model
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+// Root elements
+html {
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}

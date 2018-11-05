@@ -1,0 +1,22 @@
+// Skip navigation link for accessibility
+.skipnav {
+	font-weight: bold;
+	top: 0;
+	z-index: 1000;
+
+	@include invisible();
+
+	&:active,
+	&:focus {
+		background-color: $color-white;
+		border: $border-hairline;
+		color: $color-link;
+		clip: auto;
+		font-size: 1rem;
+		height: auto;
+		left: 0;
+		overflow: auto;
+		padding: .5em;
+		width: auto;
+	}
+}

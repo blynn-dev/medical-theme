@@ -1,0 +1,17 @@
+// Two-column section
+@include breakpoint($bp-small) {
+	.columns {
+		clear: both;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.column {
+		display: inline-block;
+		flex: 1 1 auto;
+		max-width: $bp-max;
+		vertical-align: top;
+		width: 50%;
+	}
+}

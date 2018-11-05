@@ -1,0 +1,50 @@
+// Utility classes
+
+// Contain floats
+.clearfix {
+	@include clearfix();
+}
+
+// Vertical spacer
+.spacer {
+	clear: both;
+	flex: 1 1 100%;
+	height: 0;
+	margin-top: 1em;
+}
+
+.spacer-2 {
+	margin-top: 2em;
+}
+
+.spacer-3 {
+	margin-top: 3em;
+}
+
+.spacer-4 {
+	margin-top: 4em;
+}
+
+.spacer-5 {
+	margin-top: 5em;
+}
+
+// Full-browser-width section inside a centered container
+.fullwidth {
+	@include fullwidth();
+}
+
+// Limited-width container
+.shell {
+	@include shell();
+}
+
+// Visually hidden, but accessible
+.element-invisible {
+	@include invisible();
+}
+
+// Hidden to all
+.hidden {
+	display: none;
+}

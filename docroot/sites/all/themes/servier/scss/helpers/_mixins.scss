@@ -1,0 +1,183 @@
+// Mixins
+
+/**
+ * Contain floats
+ */
+@mixin clearfix() {
+	&::after {
+		clear: both;
+		content: '';
+		display: table;
+		flex: 0 1 0;
+	}
+}
+
+/**
+ * Visually hidden but accessible elements
+ */
+@mixin invisible() {
+	background: transparent;
+	border: 0 none;
+	clip: rect(1px 1px 1px 1px);
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	left: -9999px;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+/**
+ * Centered, constrained-width section
+ */
+@mixin shell() {
+	clear: both;
+	flex: 0 1 auto;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: $bp-max;
+	position: relative;
+	width: 100%;
+
+	@include scale-padding();
+}
+
+/**
+ * Full-browser-width section inside a centered container
+ *
+ * Rightmost edge may be covered by the scrollbar in some browsers
+ * so some left/right padding on the content is recommended
+ */
+@mixin fullwidth() {
+	clear: both;
+	left: 50%;
+	margin-left: -50%;
+	margin-left: -50vw;
+	margin-right: -50%;
+	margin-right: -50vw;
+	position: relative;
+	right: 50%;
+	width: 100%;
+	width: 100vw;
+}
+
+/**
+ * Preset values for scaling the font-size
+ */
+@mixin scale-font($preset: 'normal') {
+	@if $preset == 'normal' {
+		@include scale((
+			0rem: $font-min,
+			$bp-min: $font-min,
+			$bp-medium: $font-medium,
+			$bp-max: $font-max
+		), font-size);
+	} @else if $preset == 'small' {
+		@include scale((
+			0rem: .9 * $font-min,
+			$bp-min: .9 * $font-min,
+			$bp-medium: $font-min,
+			$bp-max: $font-medium
+		), font-size);
+	} @else {
+		@error 'Unrecognized font scale: @include scale-font(#{$preset})';
+	}
+}
+
+/**
+ * Preset values for scaling the horizontal padding
+ */
+@mixin scale-padding($preset: 'normal') {
+	@if $preset == 'normal' {
+		@include scale((
+			0rem: $padding-min,
+			$bp-min: $padding-min,
+			$bp-medium: $padding-medium,
+			$bp-max: $padding-max
+		), (
+			padding-left,
+			padding-right
+		));
+	} @else {
+		@error 'Unrecognized padding scale: @include scale-padding(#{$preset})';
+	}
+}
+
+/**
+ * Smoothly scale a property (or set of properties), based on screen width
+ *
+ * $map takes a map, in the format:
+ * (breakpoint1: value1, breakpoint2: value2, breakpoint3: value3)
+ * The breakpoints must be listed in increasing order
+ * All breakpoints and values must use the same units
+ *
+ * $propertylist takes a list of CSS properties
+ * Only works for properties that can take numerical values with units
+ *
+ * Example:
+ * @include scale((0rem: 1rem, 50rem: 1rem, 80rem: 2rem), font-size);
+ * - Sets the initial font-size to 1rem
+ * - Starts increasing the font-size when the browser is 50rem wide
+ * - For screens 80rem or wider, caps the font-size at 2rem
+ */
+@mixin scale($map: (0rem: 1rem), $propertylist: font-size) {
+	// If there are two or more breakpoints, smoothly scale between each pair
+	@for $i from 1 to length($map) {
+		// Find the start and end breakpoints
+		$start: nth(nth($map, $i), 1);
+		$end: nth(nth($map, $i + 1), 1);
+
+		// Find the from and to values of the property
+		$from: nth(nth($map, $i), 2);
+		$to: nth(nth($map, $i + 1), 2);
+
+		// If the first breakpoint of the pair is 0, don't use a media query
+		@if strip-unit($start) == 0 {
+			@each $property in $propertylist {
+				// Fallback to the start value if calc isn't supported
+				#{$property}: #{$from};
+				// Calculate the scaled value
+				@if $from != $to {
+					#{$property}: #{interpolate($from, $to, $start, $end)};
+				}
+			}
+		} @else {
+			@include breakpoint($start) {
+				@each $property in $propertylist {
+					// Fallback to the start value if calc isn't supported
+					#{$property}: #{$from};
+					// Calculate the scaled value
+					@if $from != $to {
+						#{$property}: #{interpolate($from, $to, $start, $end)};
+					}
+				}
+			}
+		}
+	}
+
+	// Use the last value at the last breakpoint
+	// If the breakpoint is 0, don't use a media query
+	@if strip-unit(nth(nth($map, length($map)), 1)) == 0 {
+		@each $property in $propertylist {
+			#{$property}: #{nth(nth($map, length($map)), 2)};
+		}
+	} @else {
+		@include breakpoint(nth(nth($map, length($map)), 1)) {
+			@each $property in $propertylist {
+				#{$property}: #{nth(nth($map, length($map)), 2)};
+			}
+		}
+	}
+}
+
+/**
+ * Use an SVG as a background image
+ *
+ * Requires a string containing the code of a single valid SVG
+ */
+@mixin background-svg($svg) {
+	background-image: svg-url($svg);
+}

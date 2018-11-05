@@ -1,0 +1,66 @@
+// Variables
+
+// Primary site URL
+$url: 'https://servier.com';
+
+// Breakpoints
+$bp-min: 20rem;
+$bp-small: 30rem;
+$bp-medium: 55rem;
+$bp-max: 70rem;
+
+// Font sizes
+$font-min: 14/16 * 1rem;
+$font-medium: 16/16 * 1rem;
+$font-max: 20/16 * 1rem;
+
+// Font stacks
+$font-stack: Roboto, sans-serif;
+
+// Horizontal padding
+$padding-min: 1rem;
+$padding-medium: 2rem;
+$padding-max: 4rem;
+
+// Servier Brand palette
+// Included for reference
+$palette-blue: #0071ba;
+$palette-blue-light: #6dc7dd;
+$palette-blue-dark: #033878;
+$palette-blue-lighter: #ceeaf3;
+$palette-blue-lightest: #eaf6fb;
+$palette-accent-blue: #493c90;
+$palette-accent-purple: #96368b;
+$palette-accent-pink: #ea5284;
+$palette-accent-red: #e73458;
+$palette-accent-orange: #f39325;
+$palette-accent-yellow: #fdc41f;
+$palette-accent-green: #85c11f;
+$palette-accent-teal: #00b3bb;
+
+// Site colors
+// Check contrast: https://webaim.org/resources/contrastchecker/
+$color-black: #000;
+$color-gray-darkest: #333;
+$color-gray-darker: #555;
+$color-gray-dark: #666;
+$color-gray: #888;
+$color-gray-light: #ccc;
+$color-gray-lighter: #ddd;
+$color-gray-lightest: #eee;
+$color-white: #fff;
+
+$color-link: #00a8e9;
+$color-link-hover: darken($color-link, 30%);
+
+$color-success: #060;
+$color-success-reverse: mix($color-success, $color-white, 10%);
+
+$color-warning: #950;
+$color-warning-reverse: mix($color-success, $color-white, 10%);
+
+$color-error: #f00;
+$color-error-reverse: mix($color-error, $color-white, 10%);
+
+// Borders
+$border-hairline: 1px solid;

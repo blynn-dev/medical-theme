@@ -1,0 +1,17 @@
+// CKEditor WYSIWYG overrides
+
+// Override <body> styles
+.cke_editable {
+	background: $color-white;
+	margin: .25em 1em;
+}
+
+// Add list items to 'show blocks' mode
+.cke_show_blocks li {
+	background-image: url('../img/block_li.png');
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	border: 1px dotted;
+	padding-left: 8px;
+	padding-top: 8px;
+}

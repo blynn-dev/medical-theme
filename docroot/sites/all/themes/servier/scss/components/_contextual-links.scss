@@ -1,0 +1,71 @@
+// Drupal contextual links
+.contextual-links-region {
+	position: relative;
+}
+
+.contextual-links-region-active {
+	outline: 1px dashed;
+}
+
+.contextual-links-wrapper {
+	color: $color-black;
+	font-size: $font-min;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 550;
+
+	a {
+		background-color: $color-white;
+		color: inherit;
+		display: block;
+		padding: .125em .5em;
+
+		&:active,
+		&:focus,
+		&:hover {
+			background-color: $color-gray-lighter;
+			color: inherit;
+		}
+	}
+}
+
+a.contextual-links-trigger {
+	border: $border-hairline;
+	display: none;
+	font-weight: bold;
+	position: relative;
+	top: 1px;
+	z-index: 1;
+
+	.contextual-links-active &,
+	.contextual-links-wrapper:hover & {
+		border-bottom: 0 none;
+	}
+}
+
+.contextual-links {
+	background-color: $color-white;
+	border: $border-hairline;
+	display: none;
+	list-style: none;
+	margin: 0;
+	min-width: 100%;
+	padding: 0;
+	position: absolute;
+	right: 0;
+	text-align: left;
+	white-space: nowrap;
+}
+
+.contextual-links-trigger-active,
+.contextual-links-active .contextual-links-trigger,
+.contextual-links-active .contextual-links,
+.contextual-links-region:hover .contextual-links-trigger,
+.contextual-links-wrapper:hover .contextual-links {
+	display: block !important;
+}
+
+.contextual-links-region:hover .contextual-links-region:not(:hover) .contextual-links-trigger {
+	display: none !important;
+}

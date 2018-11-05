@@ -1,0 +1,173 @@
+// Typographic defaults
+body {
+	color: $color-gray-darkest;
+	font-family: $font-stack;
+	line-height: 1.5;
+
+	@include scale-font();
+}
+
+a {
+	color: $color-link;
+	text-decoration: none;
+
+	&:active,
+	&:focus,
+	&:hover,
+	&.active,
+	&.active-trail {
+		color: $color-link-hover;
+	}
+
+	@include breakpoint(print) {
+		// Display the URL after each link when printed
+		&[href]::after {
+			background: transparent;
+			border: 0 none;
+			color: inherit;
+			content: '(' attr(href) ')';
+			display: inline;
+			font-size: $font-min;
+			font-style: normal;
+			font-weight: normal;
+			height: auto;
+			letter-spacing: 0;
+			margin: 0;
+			padding: 0 0 0 .25em;
+			position: static;
+			text-transform: none;
+			vertical-align: baseline;
+			width: auto;
+		}
+
+		// Don't show the URL for special links
+		&[href^='#']::after,
+		&[href^='?']::after,
+		&[href^='javascript:']::after,
+		&[href^='mailto:']::after {
+			display: none;
+		}
+
+		// Add the site domain for server-relative links
+		&[href^='/']::after {
+			content: '(#{$url}' attr(href) ')';
+		}
+
+		// Add the protocol for protocol-relative links
+		&[href^='//']::after {
+			content: '(https:' attr(href) ')';
+		}
+	}
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+blockquote,
+figure {
+	margin: 1em 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $font-stack;
+	font-weight: bold;
+	margin: 1em 0 .25em;
+	line-height: 1.25;
+}
+
+h1 {
+	font-size: 2.25em;
+}
+
+h2 {
+	font-size: 2em;
+}
+
+h3 {
+	font-size: 1.5em;
+}
+
+h4 {
+	font-size: 1.25em;
+}
+
+h5 {
+	font-size: 1.125em;
+}
+
+h6 {
+	font-size: 1.0625em;
+}
+
+hr {
+	background: transparent;
+	border: 0 none;
+	border-top: $border-hairline;
+	clear: both;
+	color: $color-link;
+	height: 1px;
+	line-height: 1px;
+	margin: 1em 0;
+	padding: 0;
+	width: 100%;
+}
+
+ol {
+	list-style: decimal;
+}
+
+ol,
+ul {
+	padding-left: 3em;
+	text-align: left;
+
+	li & {
+		margin: 0;
+		padding-left: 1.5em;
+	}
+}
+
+small {
+	font-size: scale-font('small');
+}
+
+// Text alignment
+.align-right {
+	text-align: right;
+}
+
+.align-center {
+	text-align: center;
+}
+
+.align-left {
+	text-align: left;
+}
+
+// List numbering
+.list-lower-alpha {
+	list-style: lower-alpha;
+}
+
+.list-upper-alpha {
+	list-style: upper-alpha;
+}
+
+.list-lower-roman {
+	list-style: lower-roman;
+}
+
+.list-upper-roman {
+	list-style: upper-roman;
+}
+
+.list-decimal {
+	list-style: decimal;
+}

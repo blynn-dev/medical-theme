@@ -1,0 +1,79 @@
+// Tables
+caption {
+	font-family: $font-stack;
+	font-size: 1.25em;
+	font-weight: bold;
+	padding: .5em 0;
+}
+
+table {
+	border: 0 none;
+	border-collapse: collapse;
+	border-spacing: 0;
+	clear: both;
+	display: block;
+	margin: 1em 0;
+	max-width: 100%;
+	overflow-y: auto;
+	width: 100%;
+
+	ol,
+	ul {
+		padding-left: 1.5em;
+	}
+
+	.form-item {
+		display: inline-block;
+		margin: 0;
+	}
+}
+
+tr:nth-child(2n) {
+	background-color: $color-gray-lightest;
+}
+
+td,
+th {
+	border: $border-hairline $color-black;
+	padding: .25em .5em;
+	text-align: left;
+	vertical-align: top;
+}
+
+th {
+	background-color: $color-gray-light;
+}
+
+td {
+	&.active {
+		background-color: $color-gray-lightest;
+
+		tr:nth-child(2n) & {
+			background-color: $color-gray-lighter;
+		}
+	}
+
+	&[colspan] {
+		background-color: $color-gray-light;
+	}
+}
+
+.sticky-header {
+	margin: 0;
+}
+
+.views-table th a {
+	display: block;
+	min-height: 2em;
+	min-height: calc(1em + 13px);
+	padding-right: 2em;
+	position: relative;
+
+	img {
+		background-color: #fff;
+		padding: .25em;
+		position: absolute;
+		top: .25em;
+		right: 0;
+	}
+}

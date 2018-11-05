@@ -1,0 +1,15 @@
+// Print overrides
+@include breakpoint(print) {
+	html,
+	body {
+		margin: 0;
+		padding: 0 !important;
+	}
+
+	// Hide administrative tools
+	div.toolbar,
+	.contextual-links-wrapper,
+	.page-toolbox {
+		display: none !important;
+	}
+}

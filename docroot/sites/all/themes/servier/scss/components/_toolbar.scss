@@ -1,0 +1,11 @@
+// Drupal administrator toolbar overrides
+.toolbar {
+	padding: 0 !important;
+}
+
+div[id='toolbar'] {
+	box-shadow: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	position: relative !important;
+}

@@ -1,0 +1,50 @@
+// Linearize simple tables on small screens
+@include breakpoint(max-width $bp-medium) {
+	.table-linearize {
+		border: $border-hairline $color-black;
+
+		caption,
+		thead,
+		tbody,
+		tr,
+		th,
+		td {
+			border: 0 none;
+			display: block;
+		}
+
+		caption {
+			background-color: $color-gray-light;
+			border-bottom: $border-hairline;
+			padding: .5em;
+		}
+
+		tr + tr {
+			border-top: $border-hairline;
+		}
+
+		thead th {
+			display: none;
+
+			&.form-submit {
+				border-bottom: $border-hairline;
+				display: block;
+			}
+		}
+
+		tbody td,
+		tbody th {
+			&[data-th]::before {
+				content: attr(data-th) ': ';
+				display: inline;
+				font-weight: bold;
+				padding-right: .5em;
+			}
+
+			&[data-th='']::before,
+			&[colspan]::before {
+				display: none;
+			}
+		}
+	}
+}

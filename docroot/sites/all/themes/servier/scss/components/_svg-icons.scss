@@ -1,0 +1,23 @@
+// SVG icons
+// Icon dimensions are controlled by the font-size
+.icon-svg {
+	fill: currentColor;
+	font-size: 1em;
+	height: 1em;
+	vertical-align: text-bottom;
+	width: 1em;
+}
+
+// Individual icon overrides
+// Width override for non-square icons are based on the viewBox aspect ratio
+.icon-down {
+	width: 1.24em;
+}
+
+.icon-email {
+	width: 1.34em;
+}
+
+.icon-twitter {
+	width: 1.23em;
+}

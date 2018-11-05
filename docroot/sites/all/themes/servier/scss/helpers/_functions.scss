@@ -1,0 +1,107 @@
+// Helper functions used by mixins
+
+/**
+ * Interpolate - smoothly scale a value
+ *
+ * The result will evaluate to:
+ * $from when the screen is $start wide
+ * $to when the screen is $end wide
+ * and will scale linearly based on those two points
+ *
+ * Typically used in a media query with (min-width: $start)
+ * and overridden by another media query with (min-width: $end)
+ * so that the value scales between $from and $to
+ * for screen widths between $start and $end
+ *
+ * All four arguments must have the same unit
+ */
+@function interpolate($from, $to, $start, $end) {
+	// Check that the units are valid
+	@if unitless($from) or unitless($to) or unitless($start) or unitless($end) {
+		@error 'All arguments must have a unit: interpolate(#{$from}, #{$to}, #{$start}, #{$end})';
+	} @else if unit($from) != unit($to) or unit($from) != unit($start) or unit($from) != unit($end) {
+		@error 'All arguments must have the same unit: interpolate(#{$from}, #{$to}, #{$start}, #{$end})';
+	}
+
+	// If $from and $to are the same, then there is no need to calculate
+	// since the result will always be the same value
+	@if $from == $to {
+		@return $from;
+	}
+
+	// If $start and $end are the same, return the average of $from and $to
+	// since the result can't be two different values at the same time
+	@if $start == $end {
+		@return ($from + $to) / 2;
+	}
+
+	// Calculate the slope of the line connecting the two given points
+	$slope: ($to - $from) / ($end - $start);
+
+	@return calc(#{$from - $start * $slope} + #{100vw * $slope});
+}
+
+/**
+ * Optimize an SVG to use in a CSS url()
+ *
+ * http://codepen.io/jakob-e/pen/doMoML
+ * Version: 1.0.6
+ *
+ * The function requires a string containing the code of a single valid SVG
+ */
+@function svg-url($svg) {
+	// Add missing namespace
+	@if not str-index($svg, xmlns) {
+		$svg: str-replace($svg, '<svg', '<svg xmlns="http://www.w3.org/2000/svg"');
+	}
+
+	// Chunk up string in order to avoid "stack level too deep" error
+	$encoded: '';
+	$slice: 2000;
+	$index: 0;
+	$loops: ceil(str-length($svg) / $slice);
+
+	@for $i from 1 through $loops {
+		$chunk: str-slice($svg, $index, $index + $slice - 1);
+
+		// Encode
+		$chunk: str-replace($chunk, "'", '"');
+		$chunk: str-replace($chunk, '%', '%25');
+		$chunk: str-replace($chunk, '#', '%23');
+		$chunk: str-replace($chunk, '{', '%7B');
+		$chunk: str-replace($chunk, '}', '%7D');
+		$chunk: str-replace($chunk, '<', '%3C');
+		$chunk: str-replace($chunk, '>', '%3E');
+
+		$encoded: #{$encoded}#{$chunk};
+		$index: $index + $slice;
+	}
+
+	@return url('data:image/svg+xml,#{$encoded}');
+}
+
+/**
+ * Strip the unit from a numerical value
+ *
+ * Does nothing if the input is already unitless, or isn't a number
+ */
+@function strip-unit($value) {
+	@if type-of($value) == 'number' and not unitless($value) {
+		@return $value / ($value * 0 + 1);
+	}
+
+	@return $value;
+}
+
+/**
+ * Replace all instances of a substring within a string
+ */
+@function str-replace($string, $search, $replace: '') {
+	// Find the first instance of $search within $string
+	$index: str-index($string, $search);
+
+	// If $search exists within $string, replace the first instance,
+	// then call this function recursively on the remainder of $string
+	// Otherwise, return the unaltered $string
+	@return if($index, str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace), $string);
+}

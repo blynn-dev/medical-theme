@@ -1,0 +1,134 @@
+// Forms
+form {
+	clear: both;
+	margin: 1em 0;
+}
+
+fieldset {
+	border: $border-hairline;
+	margin: 1em 0;
+	padding: .25em .75em;
+}
+
+legend {
+	border: 0;
+	font-weight: bold;
+}
+
+label {
+	display: block;
+	font-weight: bold;
+	align-self: flex-end;
+
+	.form-checkboxes &,
+	.form-radios & {
+		display: inline-block;
+		font-weight: normal;
+	}
+}
+
+button,
+input,
+select,
+textarea {
+	background-color: transparent;
+	border: $border-hairline;
+	border-radius: 0;
+	box-shadow: none;
+	color: inherit;
+	font-family: $font-stack;
+	font-size: 1em;
+	line-height: inherit;
+	max-width: 100%;
+	padding: .25em;
+	width: 100%;
+}
+
+input,
+textarea {
+	border-top-color: transparent;
+	border-right-color: transparent;
+	border-left-color: transparent;
+}
+
+textarea {
+	height: 3em;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+	width: auto;
+}
+
+button,
+.button.button,
+input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+	background-color: $color-white;
+	border: $border-hairline $color-gray-light;
+	color: $color-link;
+	display: inline-block;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-top: .25em;
+	padding: .25em 2em;
+	white-space: normal;
+	width: auto;
+	max-width: 100%;
+	min-width: 10em;
+
+	&:active,
+	&:focus,
+	&:hover,
+	&.active {
+		background-color: $color-link;
+		color: $color-white;
+	}
+}
+
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	box-shadow: 0 0 .125em 1px rgba($color-black, .5);
+}
+
+.align-center .button {
+	margin: .5em 2em;
+}
+
+.form-item,
+.form-actions {
+	margin: .8em 0;
+}
+
+.webform-component-textarea {
+	margin: 1.5em 0;
+}
+
+.form-actions > input {
+	margin-right: 1em;
+}
+
+.marker {
+	color: $color-error;
+}
+
+@include breakpoint($bp-medium) {
+	.webform-component-textfield,
+	.webform-component-email {
+		display: flex;
+		align-items: center;
+
+		label,
+		input {
+			flex: 1 1 auto;
+		}
+
+		label {
+			padding-right: .5em;
+			white-space: nowrap;
+		}
+	}
+}

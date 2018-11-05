@@ -1,0 +1,24 @@
+// Drupal revision system
+.node-unpublished {
+	background-color: $color-error-reverse;
+}
+
+.revision-pending.revision-pending {
+	background-color: $color-error-reverse;
+	color: $color-error;
+}
+
+.revision-current.revision-current {
+	background-color: $color-warning-reverse;
+	color: $color-warning;
+	font-weight: bold;
+}
+
+.revision-current.published {
+	background-color: $color-success-reverse;
+	color: $color-success;
+}
+
+.revisioning-ux-buttons {
+	display: none;
+}
