@@ -57,10 +57,17 @@
 <?php print $styles; ?>
 <?php print $scripts; ?>
 </head>
-<body class="<?php print $classes; ?>"><?php
-	?><div id="top"><a href="#main" class="skipnav"><?php print t('Skip to main content'); ?></a></div><?php
+<body class="<?php print $classes; ?>">
+
+<div id="top">
+<a href="#main" class="skipnav">
+<?php print t('Skip to main content'); ?></a></div>
+<?php
 	print $page_top;
 	print $page;
 	print $page_bottom;
-?></body>
+?>
+
+
+</body>
 </html>
