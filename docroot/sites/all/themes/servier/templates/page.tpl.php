@@ -336,9 +336,4 @@ if ($messages || $renderedTabs || $action_links) {
         </div>
       </div> 
 
-<!-- <footer class="page-footer"><div class="shell"><?php
-	// Render the main footer region
-	print render($page['footer']);
-?></div></footer> -->
-
 <?php
