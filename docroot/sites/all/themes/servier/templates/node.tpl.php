@@ -89,26 +89,24 @@ hide($content['links']);
 $nodeID = drupal_html_id('node-' . $node->nid);
 
 // Opening markup
-?>
-
-
-<?php
+?><div id="<?php print $nodeID; ?>" class="<?php print $classes; ?>"><?php
 print render($title_prefix);
 print render($title_suffix);
 
+// Node title
+if ($title) {
+	if ($page || arg(0) == 'node' && arg(1) == $node->nid && arg(2) == 'revisions') {
+		// If this is the node page or a draft page
+		?><h1><?php print $title ?></h1><?php
+	} else {
+		// If the node is displayed as part of another page
+		?><h2><?php print $title ?></h2><?php
+	}
+}
 
 // Node content
 print render($content);
 
-?>
-
-
-
-
-
-      
-    
-</div>
-
-
-<?php
+// Closing markup
+print render($content['links']);
+?></div><?php

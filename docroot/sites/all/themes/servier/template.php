@@ -36,9 +36,6 @@ function servier_preprocess_page(&$vars) {
 	} else {
 		$vars['page_manager'] = false;
 	}
-	// To display sublinks.
-    $main_menu_tree = menu_tree(variable_get('menu_main_links_source', 'main-menu'));
-    $vars['main_menu'] =  $main_menu_tree;
 }
 //*/
 
@@ -67,7 +64,7 @@ function servier_menu_link($vars) {
 	}
 
 	// Render the menu item without classes on the <li>
-	return '<li class="nav-item"><a class="nav-link" href="'. $element['#href'] .'">'  . $element['#title'] .   ' </a></li>';
+	return '<li>' . $output . $sub_menu . '</li>';
 }
 //*/
 
@@ -173,10 +170,3 @@ function servier_form_user_login_alter(&$form) {
 	$form['pass']['#description'] = '';
 }
 //*/
-
-
-//menu
-  function servier_menu_tree__main_menu(&$vars) {
-    // To add CSS class to the main menu ul
-    return '<div class="collapse navbar-collapse" id="navbarsExampleDefault"><ul class="navbar-nav mr-auto">' . $vars['tree'] . '</ul></div>';
-  }
