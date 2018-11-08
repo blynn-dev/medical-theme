@@ -38,7 +38,7 @@ $bannerID = drupal_html_id('content');
 		print render($content);
 
 		// Print the scroll link
-		?><a href="#<?php print $bannerID; ?>" class="banner-scroll"><span class="element-invisible">Next section</span><svg class="icon-svg icon-down" viewBox="0 0 32 26" height="26" width="32"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/<?php print path_to_theme(); ?>/img/icons.svg#down"></use></svg></a><?php
+		?><a href="#<?php print $bannerID; ?>" class="banner-scroll"><span class="element-invisible">Next section</span><svg class="icon-svg icon-down" viewBox="0 0 32 26" height="26" width="32"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/<?php print drupal_get_path('theme', variable_get('theme_default', NULL)); ?>/img/icons.svg#down"></use></svg></a><?php
 	?></div></div><?php
 ?></div><?php
 
