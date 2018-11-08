@@ -1,4 +1,64 @@
+@import "../helpers/variables.scss";    
+
 // Header region
 .logged-in .fixed-top {
 	position: relative;
+}
+
+
+.logo{
+    vertical-align: top;
+    margin: -40px 0;
+}
+
+.mr-auto, .mx-auto {
+    width: 100%;
+}
+
+
+#servier.navbar {
+    // force bootstrap to be white menu
+    background-color: #fff!important; 
+
+    .nav-link{
+        margin-right: 20px;
+    }
+
+    .nav-item{
+        flex: 100%;
+    }
+    
+
+    a {
+        color: $brand!important; 
+        transition: ease-in-out color .15s;
+        margin-top: 50px;
+        text-transform: uppercase;
+        font-size: $menu-size;
+        text-decoration: none;
+        border-bottom: 1px solid $underline;
+        margin-right: 3rem;
+
+        &:hover {
+            color: $alt!important; 
+            text-decoration: none;
+            border-color: $link;
+        }
+        
+    }
+}
+
+//color for the hamburger stand
+.bg-mobile-button{
+    background: $link;
+}
+
+// mobile menu padding between items
+@media (max-width:981px) {
+    #servier.navbar .nav-link {
+        margin-right: 0px;
+    }
+    #servier.navbar a {
+        margin-top: 15px;
+    }
 }

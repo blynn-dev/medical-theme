@@ -1,0 +1,83 @@
+@import "../helpers/variables.scss";    
+
+body{
+    font-size: $default-size;
+}
+
+.lead{
+    font-size: $default-size;
+}
+
+.container {
+    max-width: 1080px;
+}
+
+.circle-container{
+    max-width: 100%;
+}
+
+.blue-note{
+    color: $alt;
+
+    &-desc{
+        color: $alt;
+        font-size: $title-alt;
+    }
+
+}
+
+.bg-news{
+    background: () center center #064a61; 
+    padding-bottom: 100px;
+}
+
+.news-header{
+    margin-bottom: 0;
+}
+
+.copyright{
+    font-size: 0.8rem;
+    color: $brand;
+}
+
+.information{
+    margin: 1.5rem;
+    padding: 3rem;
+}
+
+.logo-stretch{
+    width: 100%;
+} 
+
+.push-6{
+    margin-left: 50%;
+}
+
+/*
+ * Extra utilities
+ */
+
+.bg-news .flex-equal > * {
+    -ms-flex: 1;
+    flex: 1;
+}
+
+@media (min-width: 768px) {
+    .bg-news .flex-md-equal > * {
+        -ms-flex: 1;
+        flex: 1;
+    }
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+// fix giant images for mobile
+
+@media (max-width: 768px) {
+    .bg-careers img, .logo-stretch, .site-banner{
+        max-width: 100%;
+    }
+}
+

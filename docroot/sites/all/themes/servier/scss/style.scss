@@ -37,6 +37,19 @@
 @import 'components/menu';
 @import 'components/skipnav';
 
+//layout 
+@import 'components/defaults';  
+
+//components
+
+@import 'components/header';  
+@import 'components/banner';  
+@import 'components/circles';  
+@import 'components/titles';  
+@import 'components/footer'; 
+@import 'components/buttons'; 
+@import 'components/accordion';   
+
 // Page regions
 @import 'components/header';
 @import 'components/toolbox';

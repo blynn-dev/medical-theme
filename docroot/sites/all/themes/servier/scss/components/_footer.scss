@@ -1,1 +1,48 @@
+@import "../helpers/variables.scss";    
+
 // Footer region
+.foot-border{
+    padding-bottom: 3rem;
+    border-bottom: 8px solid #fff;
+
+    &-right{
+        padding-right: 3rem;
+        margin-right: 3rem;
+        border-right: 2px solid $brand;
+    }
+
+    &-bottom{
+        margin-bottom: 3rem;
+    }
+
+} 
+
+.footer-end{
+    font-size: $title-alt;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+
+    a{
+        text-transform: uppercase;
+    }
+
+    &-right{
+        text-align: right;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .foot-border{
+        border-bottom: 0;
+    }
+}
+
+@media (max-width: 815px) {
+    .foot-border-right {
+        padding-right: 0;
+        margin-right: 0;
+        border-right: 0;
+        padding-left: 0;
+    }
+}

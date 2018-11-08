@@ -1,0 +1,47 @@
+@import "../helpers/variables.scss";    
+
+//buttons and links
+
+a{
+    color: $link;
+    text-decoration: underline;
+}
+
+.footer a{
+    text-decoration: none;
+    color: $alt;
+}
+
+.ghost-button{
+    color: #fff;
+    padding: 0.3rem 0.8rem 0.3rem;
+    border: 1px solid #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover{
+        color: $link;
+        text-decoration: underline;
+        border: 1px solid $link;
+    }
+    &--careers{
+        color: $careers;
+        border: 1px solid $careers;
+    }
+}
+
+
+//things inside the content area submitted
+div[property='schema:text']{
+
+    a{
+        color: $success;
+        text-decoration: none;
+
+    &:hover{
+        color: $link;
+    }
+
+    }
+    
+}

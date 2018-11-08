@@ -1,0 +1,110 @@
+@import "../helpers/variables.scss";    
+
+.site-banner{ 
+    margin: 0!important;
+    height: 635px;
+    background: url(../assets/background-banner.png) no-repeat center center;
+    width: 100%;
+    background-size: cover;
+
+    .bleed-over{
+        position: absolute;
+        bottom: 0;
+        background: $bleed;
+        width: 80%;
+        margin: 6% 6%; 
+        margin-bottom: -80px;
+        padding-bottom: 90px;
+        opacity: 0.9;
+        padding-top: 100px;
+        color: $brand;
+    }
+    
+    .bleed-over-text{
+        position: absolute;
+        bottom: 0;
+        margin: 6% 6%;
+        margin-bottom: -27px;
+        width: 80%;
+        color: #fff;
+        padding-left: 10%;
+        padding-right: 10%;
+
+        h1{
+            font-size: $title-size;
+        }
+    }
+    
+}
+
+.bleed-pad{ 
+    margin-top: 145px;
+}
+
+.bg-careers{
+    background: url(../assets/careers.jpg) no-repeat center left;
+    height: 34rem;
+}
+
+// fixing height on careers background
+
+@media (max-width: 858px) {
+    .bg-careers{
+        height: 38rem;
+    }
+}
+
+// make careers image disapper at smaller screen
+
+@media (max-width: 808px) {
+    .bg-careers{
+        background: transparent;
+        height: auto;
+        margin-bottom: 2.5rem;
+    }
+    .push-6{
+        margin-left: 0;
+    }
+    .site-banner {
+        margin: 0 !important;
+        height: 300px;
+        width: 100%;
+        background-size: cover;
+        padding: 1rem 0rem 1rem 0rem!important;
+        .bleed-over-text {
+            position: relative;
+            bottom: 0;
+            margin: 0;
+            margin-bottom: 0;
+            width: 100%;
+            color: #fff;
+            padding-left: 5%;
+            padding-right: 5%;
+            background: #00a8e9;
+            margin-top: 284px;
+            margin-bottom: 3rem;
+            min-height: 147px;
+            padding-top: 3%;
+        }
+    }
+    .bleed-over{
+        display: none;
+    }
+    .bleed-pad {
+        margin-top: 10rem;
+    }
+    .w-100 {
+        padding: 0 15%;
+    }
+}
+
+@media (max-width: 460px) {
+
+    .bleed-pad {
+        margin-top: 14rem;
+    }
+    .w-100 {
+        padding: 0 11%;
+    }
+
+}

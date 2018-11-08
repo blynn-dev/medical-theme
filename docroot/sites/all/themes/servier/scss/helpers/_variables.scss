@@ -62,5 +62,45 @@ $color-warning-reverse: mix($color-success, $color-white, 10%);
 $color-error: #f00;
 $color-error-reverse: mix($color-error, $color-white, 10%);
 
+
+//colors
+$brand: #cdcdcd;
+$alt: #127ec2;
+$read: #444;
+$link: #123;
+$warn: #ff0000;
+$success: #65f442;
+$light: #f5f5f5;
+$underline: #5bc8db; 
+$accordion: #903f97;
+$accordion-alt: #ed5989;
+$bleed: #00a8e9;  
+$careers: #f9b47f;
+
+
 // Borders
 $border-hairline: 1px solid;
+
+//layout
+$content-padding: 1.1rem;
+$content-spacing: $content-padding / 2;
+
+//icon size
+$icon-size: 64px;
+
+$border: 1px solid $alt;
+
+$corner: 10px;
+
+//size
+$default-size: 1.1rem; 
+$menu-size: 1rem;
+
+//titles
+$title-size: $default-size * 1.4;
+$title-alt:  $default-size - 0.3;
+$number-size: $title-size * 3;
+
+//smaller size
+$mobile: $default-size / 2 + 1;
+

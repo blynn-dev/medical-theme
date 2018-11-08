@@ -1,0 +1,215 @@
+@import "../helpers/variables.scss";    
+
+.bold-title{
+    color: $brand;
+    font-size: $title-size;
+    text-transform: uppercase;
+}
+
+.bg-light{
+    background: $light;
+    padding-bottom: 15px;
+    padding-top: 15px;
+
+    p.lead{
+        color: $read;
+        margin: 1rem 1rem;
+    }
+}
+
+.bg-light .bold-title{
+    color: $read;
+    font-size: $title-size;
+    text-transform: uppercase;    
+
+    &-stripe:before{
+        border-bottom: 2px solid $accordion;
+        content: " ";
+        display: initial;
+        position: absolute;
+        left: 16%;
+        margin-top: 17px;
+        z-index: 1;
+        padding: 1px;
+        width: 20%;
+    }
+    &-stripe:after{
+        border-bottom: 2px solid $accordion;
+        content: " ";
+        display: initial;
+        position: absolute;
+        right: 16%;
+        margin-top: 17px;
+        z-index: 1;
+        padding: 1px;
+        width: 20%;
+    }
+}
+
+.bg-none{
+    padding-bottom: 15px;
+    padding-top: 15px;
+
+    .bold-title-stripe--invert{
+        color: #fff;
+
+        &:before{
+            border-bottom: 2px solid #fff;
+            content: " ";
+            display: initial;
+            position: absolute;
+            left: 16%;
+            margin-top: 17px;
+            z-index: 1;
+            padding: 1px;
+            width: 20%;
+        }
+        &:after{
+            border-bottom: 2px solid #fff;
+            content: " ";
+            display: initial;
+            position: absolute;
+            right: 16%;
+            margin-top: 17px;
+            z-index: 1;
+            padding: 1px;
+            width: 20%;
+        }
+    }
+
+    p.lead{
+        color: $read;
+        margin: 1rem 1rem;
+    }
+}
+
+.bg-news{
+    padding-top: 15px;
+
+    .bold-title-stripe--invert{
+        color: #fff;
+
+        &:before{
+            border-bottom: 2px solid #fff;
+            content: " ";
+            display: initial;
+            position: absolute;
+            left: 16%;
+            margin-top: 17px;
+            z-index: 1;
+            padding: 1px;
+            width: 20%;
+        }
+        &:after{
+            border-bottom: 2px solid #fff;
+            content: " ";
+            display: initial;
+            position: absolute;
+            right: 16%;
+            margin-top: 17px;
+            z-index: 1;
+            padding: 1px;
+            width: 20%;
+        }
+    }
+
+    p.lead{
+        color: #fff;
+        //margin: 1rem 1rem;
+        margin-bottom: 25px;
+    }
+    span.lead-date{
+        display: block;
+        font-weight: 100;
+    }
+}
+
+.bg-careers{
+    text-align: center;
+
+    .bold-title-stripe{
+        &:before{
+            border-bottom: 2px solid $careers;
+            content: " ";
+            display: initial;
+            position: absolute;
+            left: 16%;
+            margin-top: 17px;
+            z-index: 1;
+            padding: 1px;
+            width: 20%;
+        }
+        &:after{
+            border-bottom: 2px solid $careers;
+            content: " ";
+            display: initial;
+            position: absolute;
+            right: 16%;
+            margin-top: 17px;
+            z-index: 1;
+            padding: 1px;
+            width: 20%;
+        }
+        margin-bottom: 2.5rem;
+        margin-top: 2.5rem;
+    }
+
+    p{
+        margin-bottom: 2.5rem;
+    }
+
+    p.intro{
+        color: $read;
+        margin-bottom: 2.5rem;
+        font-size: $title-size;
+    }
+    p.lead{
+        color: $brand;
+        margin-bottom: 2.5rem;
+        font-size: $title-size;
+    }
+}
+
+
+.bg-none .bold-title{
+    color: $read;
+    font-size: $title-size;
+    text-transform: uppercase;    
+
+    &-stripe:before{
+        border-bottom: 2px solid $accordion-alt;
+        content: " ";
+        display: initial;
+        position: absolute;
+        left: 16%;
+        margin-top: 17px;
+        z-index: 1;
+        padding: 1px;
+        width: 20%;
+    }
+    &-stripe:after{
+        border-bottom: 2px solid $accordion-alt;
+        content: " ";
+        display: initial;
+        position: absolute;
+        right: 16%;
+        margin-top: 17px;
+        z-index: 1;
+        padding: 1px;
+        width: 20%;
+    }
+}
+
+.footer h4{
+    font-size: $default-size;
+    text-transform: uppercase; 
+    font-weight: bold;
+}
+
+
+// kill the borders on titles
+@media (max-width: 982px) {
+    .bold-title:before, .bold-title:after, .bold-title-stripe:before, .bold-title-stripe:after{ 
+        border: 0!important;
+    }
+}
