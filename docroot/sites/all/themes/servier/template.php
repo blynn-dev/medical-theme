@@ -69,6 +69,64 @@ function servier_menu_link($vars) {
 //*/
 
 /**
+ * Render main menu links
+ */
+function servier_menu_link__main_menu($vars) {
+	$element = $vars['element'];
+	$sub_menu = '';
+
+	// Add a class to each link
+	$element['#localized_options']['attributes']['class'][] = 'nav-link';
+
+	// Render the link
+	$output = l($element['#title'], $element['#href'], $element['#localized_options']);
+
+	// Render the submenu (if any)
+	if ($element['#below']) {
+		$sub_menu = drupal_render($element['#below']);
+	}
+
+	// Render the menu item
+	return '<li class="nav-item">' . $output . $sub_menu . '</li>';
+}
+//*/
+
+/**
+ * Render social menu links
+ */
+function servier_menu_link__menu_social($vars) {
+	$element = $vars['element'];
+	$sub_menu = '';
+
+	// Sanitize the original link text
+	check_plain($element['#title']);
+
+	// Allow HTML in the link content
+	$element['#localized_options']['html'] = TRUE;
+
+	// Check if this is a recognized social media site
+	if (substr($element['#href'], 0, 20) === 'https://twitter.com/') {
+		// Add the SVG and wrapper to the link content
+		$element['#title'] = '<span class="element-invisible">' . $element['#title'] . '</span><svg class="icon-svg icon-twitter" viewBox="0 0 252 206" height="16" width="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="' . path_to_theme() . '/img/icons.svg#twitter"></use></svg>';
+	} else if (substr($element['#href'], 0, 25) === 'https://www.linkedin.com/') {
+		// Add the SVG and wrapper to the link content
+		$element['#title'] = '<span class="element-invisible">' . $element['#title'] . '</span><svg class="icon-svg icon-linkedin" viewBox="0 0 450 450" height="16" width="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="' . path_to_theme() . '/img/icons.svg#linkedin"></use></svg>';
+	}
+
+	// Render the link
+	$output = l($element['#title'], $element['#href'], $element['#localized_options']);
+
+	// Render the submenu (if any)
+	if ($element['#below']) {
+		$sub_menu = drupal_render($element['#below']);
+	}
+
+	// Render the menu item
+	return '<li>' . $output . $sub_menu . '</li>';
+}
+//*/
+
+/**
  * Render a field with no extra markup (can be overridden by field.tpl.php)
  */
 function servier_field($vars) {
