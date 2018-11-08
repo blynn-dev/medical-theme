@@ -120,7 +120,7 @@ if ($messages || $renderedTabs || $action_links) {
 // Global footer
 ?><footer class="page-footer"><div class="shell"><?php
 	// Add the Servier logo
-	?><div class="footer-logo"><a href="https://servier.com/"><span class="element-invisible">Servier</span><svg class="icon-svg icon-logo-servier" viewBox="0 0 335 112" height="168" width="56"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/<?php path_to_theme(); ?>/img/icons.svg#logo-servier"></use></svg></a></div><?php
+	?><div class="footer-logo"><a href="https://servier.com/"><span class="element-invisible">Servier</span><svg class="icon-svg icon-logo-servier" viewBox="0 0 335 112" height="168" width="56"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/<?php print path_to_theme(); ?>/img/icons.svg#logo-servier"></use></svg></a></div><?php
 
 	// Render the main footer region
 	print render($page['footer']);
