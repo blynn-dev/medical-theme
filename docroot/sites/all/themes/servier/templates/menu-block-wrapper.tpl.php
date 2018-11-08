@@ -18,3 +18,4 @@
  * @see template_preprocess_menu_block_wrapper()
  */
 print render($content);
+

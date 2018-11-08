@@ -72,48 +72,21 @@
 
 
 <nav id="servier" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-
-<?php
-	// Render the header region
-	print render($page['header']);
-?>
-
-	  <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="#">
         <img src="../img/logo.png" alt="logo" class="logo"/>
       </a>
 
       <button class="bg-mobile-button navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      
+        <?php
+          // Render the header region
+          print render($page['header']);
+        ?>
 
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Advocacy</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pipeline & Products</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Ecosystem</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#news">Newsroom</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#careers">Careers</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact Us</a>
-          </li>
-        </ul>
-      </div>
   </nav>
-
-</header><?php
+<?php
 
 // Drupal messages and editor links
 $renderedTabs = trim(render($tabs));
