@@ -68,9 +68,21 @@
  */
 
 // Global header
-?><header class="page-header" id="header"><div class="shell"><?php
+?><header class="page-header fixed-top" id="header"><div class="shell"><?php
+	// Logo opening tag
+	if ($is_front) { ?><h1 class="logo"><?php } else { ?><div class="logo"><?php }
+		// Logo SVG
+		?><a href="<?php print $front_page; ?>" rel="home"><img src="/<?php print path_to_theme(); ?>/img/logo.svg" alt="<?php print $site_name; if ($site_name && $site_slogan) { print ', '; } print $site_slogan; ?>" height="335" width="133" /></a><?php
+	// Logo closing tag
+	if (!$is_front) { ?></div><?php } else { ?></h1><?php }
+
+	// Mobile menu control
+	?><button class="bg-mobile-button navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><?php
+
 	// Render the header region
-	print render($page['header']);
+	?><nav id="nav"><?php
+		print render($page['header']);
+	?></nav><?php
 ?></div></header><?php
 
 // Drupal messages and editor links
@@ -107,6 +119,9 @@ if ($messages || $renderedTabs || $action_links) {
 
 // Global footer
 ?><footer class="page-footer"><div class="shell"><?php
+	// Add the Servier logo
+	?><div class="footer-logo"><a href="https://servier.com/"><span class="element-invisible">Servier</span><svg class="icon-svg icon-logo-servier" viewBox="0 0 335 112" height="168" width="56"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/<?php path_to_theme(); ?>/img/icons.svg#logo-servier"></use></svg></a></div><?php
+
 	// Render the main footer region
 	print render($page['footer']);
 ?></div></footer><?php

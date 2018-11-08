@@ -17,12 +17,6 @@ function servier_preprocess_html(&$vars) {
 	// https://github.com/Keyamoon/svgxuse
 	// SVGxUse - polyfill for SVG <use> referencing external files
 	drupal_add_js($theme_path . '/js/libraries/svgxuse.min.js', array('group' => JS_LIBRARY, 'every_page' => TRUE));
-
-	// https://github.com/kenwheeler/slick/
-	// Slick - responsive slideshows and carousels
-	// Requires jQuery 1.7+
-	// Needs additional custom JS and CSS for each slideshow
-	drupal_add_js($theme_path . '/js/libraries/slick.min.js', array('group' => JS_LIBRARY, 'every_page' => TRUE));
 }
 //*/
 
@@ -107,10 +101,10 @@ function servier_menu_link__menu_social($vars) {
 	// Check if this is a recognized social media site
 	if (substr($element['#href'], 0, 20) === 'https://twitter.com/') {
 		// Add the SVG and wrapper to the link content
-		$element['#title'] = '<span class="element-invisible">' . $element['#title'] . '</span><svg class="icon-svg icon-twitter" viewBox="0 0 252 206" height="16" width="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="' . path_to_theme() . '/img/icons.svg#twitter"></use></svg>';
+		$element['#title'] = '<span class="element-invisible">' . $element['#title'] . '</span><svg class="icon-svg icon-twitter" viewBox="0 0 252 206" height="16" width="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/' . path_to_theme() . '/img/icons.svg#twitter"></use></svg>';
 	} else if (substr($element['#href'], 0, 25) === 'https://www.linkedin.com/') {
 		// Add the SVG and wrapper to the link content
-		$element['#title'] = '<span class="element-invisible">' . $element['#title'] . '</span><svg class="icon-svg icon-linkedin" viewBox="0 0 450 450" height="16" width="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="' . path_to_theme() . '/img/icons.svg#linkedin"></use></svg>';
+		$element['#title'] = '<span class="element-invisible">' . $element['#title'] . '</span><svg class="icon-svg icon-linkedin" viewBox="0 0 450 450" height="16" width="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/' . path_to_theme() . '/img/icons.svg#linkedin"></use></svg>';
 	}
 
 	// Render the link
