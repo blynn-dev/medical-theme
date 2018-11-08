@@ -97,7 +97,7 @@ print render($title_suffix);
 if ($title) {
 	if ($page || arg(0) == 'node' && arg(1) == $node->nid && arg(2) == 'revisions') {
 		// If this is the node page or a draft page
-		?><h1><?php print $title ?></h1><?php
+		?><div class="shell"><h1><?php print $title ?></h1></div><?php
 	} else {
 		// If the node is displayed as part of another page
 		?><h2><?php print $title ?></h2><?php
