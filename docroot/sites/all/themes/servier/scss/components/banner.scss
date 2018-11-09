@@ -11,24 +11,30 @@
         position: relative;
         background: $bleed;
         width: 80%;
-        margin: 400px 0 6% 8%;
+        margin: 300px 0 6% 8%;
         opacity: .9;
         color: #ddd;
-        border: 0px;
-        min-height: 235px;
+        border: 0;
+        height: 365px;
     }
     
     .bleed-over-text{
         position: relative;
         top: 0;
-        margin: -235px 0% 6% 6%;
+        margin: -385px 0 6% 8%;
         width: 80%;
         color: #fff;
         padding-left: 10%;
         padding-right: 10%;
+        height: auto;
 
         h1{
             font-size: $title-size;
+        }
+ 
+        p{
+            font-weight: lighter;
+            font-size: $banner-size;
         }
     }
     
