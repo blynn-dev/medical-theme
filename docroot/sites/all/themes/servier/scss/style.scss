@@ -37,6 +37,23 @@
 @import 'components/menu';
 @import 'components/skipnav';
 
+// Drupal components
+@import 'components/contextual-links';
+@import 'components/messages';
+@import 'components/pager';
+@import 'components/revisions';
+@import 'components/search-results';
+@import 'components/tabs';
+@import 'components/toolbar';
+@import 'components/wysiwyg';
+
+// Utility classes
+@import 'components/utility';
+
+// Print overrides
+@import 'components/print';
+
+
 //layout 
 @import 'components/defaults';  
 
@@ -56,18 +73,3 @@
 @import 'components/content';
 @import 'components/footer';
 
-// Drupal components
-@import 'components/contextual-links';
-@import 'components/messages';
-@import 'components/pager';
-@import 'components/revisions';
-@import 'components/search-results';
-@import 'components/tabs';
-@import 'components/toolbar';
-@import 'components/wysiwyg';
-
-// Utility classes
-@import 'components/utility';
-
-// Print overrides
-@import 'components/print';

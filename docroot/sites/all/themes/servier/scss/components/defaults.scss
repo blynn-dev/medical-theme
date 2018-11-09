@@ -8,6 +8,30 @@ body{
     font-size: $default-size;
 }
 
+.brand{
+    border: 0!important;
+    &-spacer{
+        margin-right: 2rem;
+    }
+}
+
+#topmenu{
+    margin-top: 25px;
+    .social a{
+        background: $color-gray-darker;
+        height: 17px;
+        width: 18px;
+        padding: 0.2rem;
+        color: #fff;
+        font-size: .7rem;
+        text-decoration: none;
+        margin: -8px 11px 0px 0px;
+        text-align: center;
+        border-radius: 360px;
+        box-sizing: content-box;
+    }
+}
+
 .container {
     max-width: 1080px;
 }
@@ -66,7 +90,7 @@ body{
     .bg-news .flex-md-equal > * {
         -ms-flex: 1;
         flex: 1;
-    }
+    } 
 }
 
 .overflow-hidden {
@@ -75,6 +99,11 @@ body{
 
 // fix giant images for mobile
 
+@media (max-width: 981px) {
+    #topmenu{
+        display: none;   
+    }
+}
 @media (max-width: 768px) {
     .bg-careers img, .logo-stretch, .site-banner{
         max-width: 100%;

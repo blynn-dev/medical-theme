@@ -32,6 +32,38 @@
 
 }
 
+.footer-logo .icon-svg{
+    font-size: 1.6em;
+    color: $footer-logo;
+}
+
+.footer{
+    .social a{
+        background: $color-link;
+        height: 18px;
+        width: 18px;
+        color: #fff;
+        font-size: .9rem;
+        padding: 9px;
+        text-decoration: none;
+        margin: -12px 11px 0px 0px;
+        text-align: center;
+        -webkit-border-radius: 360px;
+        -moz-border-radius: 360px;
+        border-radius: 360px;
+        box-sizing: content-box;
+        display: inline-block;
+    }
+}
+
+@media (max-width: 982px) {
+    .footer {
+        .social {
+            margin-top: 1rem;
+        }
+    }
+}
+
 @media (max-width: 768px) {
     .foot-border{
         border-bottom: 0;
@@ -41,8 +73,6 @@
 @media (max-width: 815px) {
     .foot-border-right {
         padding-right: 0;
-        margin-right: 0;
         border-right: 0;
-        padding-left: 0;
     }
 }
