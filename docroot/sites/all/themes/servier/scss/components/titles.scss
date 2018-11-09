@@ -6,10 +6,11 @@
     text-transform: uppercase;
 }
 
-.bg-light{
+.bg-light, .theme-gray{
     background: $light;
     padding-bottom: 15px;
     padding-top: 15px;
+    width: 100%;
 
     p.lead{
         color: $read;
@@ -17,7 +18,7 @@
     }
 }
 
-.bg-light .bold-title{
+.bg-light .bold-title, .theme-gray .bold-title{
     color: $read;
     font-size: $title-size;
     text-transform: uppercase;    
@@ -83,7 +84,7 @@
     }
 }
 
-.bg-news{
+.bg-news, .theme-black{
     padding-top: 15px;
 
     .bold-title-stripe--invert{

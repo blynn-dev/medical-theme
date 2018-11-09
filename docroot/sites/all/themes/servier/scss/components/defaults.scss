@@ -17,7 +17,7 @@ body{
 
 #topmenu{
     margin-top: 25px;
-    .social a{
+    a{
         background: $color-gray-darker;
         height: 17px;
         width: 18px;
@@ -30,6 +30,13 @@ body{
         border-radius: 360px;
         box-sizing: content-box;
     }
+    .social .icon-twitter, .social .icon-linkedin{
+        color: #fff;
+    } 
+}
+
+#content{
+    padding-top: 5%;
 }
 
 .container {
@@ -48,6 +55,11 @@ body{
         font-size: $title-alt;
     }
 
+}
+
+.icon-down {
+    color: #fff;
+    font-size: 2.25rem;
 }
 
 .bg-news{

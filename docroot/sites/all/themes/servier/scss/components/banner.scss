@@ -3,28 +3,25 @@
 .site-banner{ 
     margin: 0!important;
     height: 635px;
-    background: url(../assets/background-banner.png) no-repeat center center;
+    background: url(/sites/default/files/fields/banner/banner.jpg) no-repeat center center;
     width: 100%;
     background-size: cover;
 
     .bleed-over{
-        position: absolute;
-        bottom: 0;
+        position: relative;
         background: $bleed;
         width: 80%;
-        margin: 6% 6%; 
-        margin-bottom: -80px;
-        padding-bottom: 90px;
-        opacity: 0.9;
-        padding-top: 100px;
-        color: $brand;
+        margin: 400px 0 6% 8%;
+        opacity: .9;
+        color: #ddd;
+        border: 0px;
+        min-height: 235px;
     }
     
     .bleed-over-text{
-        position: absolute;
-        bottom: 0;
-        margin: 6% 6%;
-        margin-bottom: -27px;
+        position: relative;
+        top: 0;
+        margin: -235px 0% 6% 6%;
         width: 80%;
         color: #fff;
         padding-left: 10%;
@@ -65,34 +62,34 @@
     .push-6{
         margin-left: 0;
     }
-    .site-banner {
-        margin: 0 !important;
-        height: 300px;
-        width: 100%;
-        background-size: cover;
-        padding: 1rem 0rem 1rem 0rem!important;
-        .bleed-over-text {
-            position: relative;
-            bottom: 0;
-            margin: 0;
-            margin-bottom: 0;
-            width: 100%;
-            color: #fff;
-            padding-left: 5%;
-            padding-right: 5%;
-            background: #00a8e9;
-            margin-top: 284px;
-            margin-bottom: 3rem;
-            min-height: 147px;
-            padding-top: 3%;
-        }
-    }
-    .bleed-over{
-        display: none;
-    }
-    .bleed-pad {
-        margin-top: 10rem;
-    }
+    // .site-banner {
+    //     margin: 0 !important;
+    //     height: 300px;
+    //     width: 100%;
+    //     background-size: cover;
+    //     padding: 1rem 0rem 1rem 0rem!important;
+    //     .bleed-over-text {
+    //         position: relative;
+    //         bottom: 0;
+    //         margin: 0;
+    //         margin-bottom: 0;
+    //         width: 100%;
+    //         color: #fff;
+    //         padding-left: 5%;
+    //         padding-right: 5%;
+    //         background: #00a8e9;
+    //         margin-top: 284px;
+    //         margin-bottom: 3rem;
+    //         min-height: 147px;
+    //         padding-top: 3%;
+    //     }
+    // }
+    // .bleed-over{
+    //     display: none;
+    // }
+    // .bleed-pad {
+    //     margin-top: 10rem;
+    // }
     .w-100 {
         padding: 0 15%;
     }
@@ -100,9 +97,9 @@
 
 @media (max-width: 460px) {
 
-    .bleed-pad {
-        margin-top: 14rem;
-    }
+    // .bleed-pad {
+    //     margin-top: 14rem;
+    // }
     .w-100 {
         padding: 0 11%;
     }
