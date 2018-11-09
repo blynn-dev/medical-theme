@@ -15,28 +15,42 @@ body{
     }
 }
 
-#topmenu{
-    margin-top: 25px;
+.social{
+    margin-top: -20px;
+    padding-bottom: 20px;
+
+    .menu{
+        margin-left: 90%;
+    }
+
     a{
-        background: $color-gray-darker;
+        background: $color-gray;
         height: 17px;
         width: 18px;
         padding: 0.2rem;
-        color: #fff;
+        color: #fff!important;
         font-size: .7rem;
         text-decoration: none;
-        margin: -8px 11px 0px 0px;
+        margin: -8px 11px 0px 0px; 
         text-align: center;
         border-radius: 360px;
         box-sizing: content-box;
+        border: 0!important;
     }
     .social .icon-twitter, .social .icon-linkedin{
         color: #fff;
     } 
+    .icon-twitter, .icon-linkedin{
+        width: 1.43em;
+    }
 }
 
 #content{
     padding-top: 5%;
+}
+
+.region{
+    width: 100%;
 }
 
 .container {

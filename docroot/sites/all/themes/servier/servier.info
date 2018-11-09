@@ -4,7 +4,6 @@ version = 1.0
 project = "servier"
 core = 7.x
 engine = phptemplate
-regions[topmenu] = Top Menu
 regions[header] = Header
 regions[content] = Content
 regions[footer] = Footer
