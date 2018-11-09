@@ -4,4 +4,8 @@ docroot/sites/*/files
 docroot/sites/*/private
 
 docroot/sites/default/settings.php
+<<<<<<< HEAD
   
+=======
+ 
+>>>>>>> origin/master
