@@ -32,8 +32,14 @@ $bannerID = drupal_html_id('content');
 
 //$bgSet = trim(strip_tags(render($content['field_p_banner_img'])));
 
+$sectionBg = trim(strip_tags(render($content['field_p_section_img'])));
+if ($sectionBg != '') {
+	$sectionBg = ' style="background-image:url(' . "'" . $sectionBg . "'" . ')"';
+	$sectionClass .= ' section-bg';
+}
+
 ?>
-<div class="site-banner position-relative p-3 p-md-5 m-md-3" style="background: url(<?php //print $bgSet; ?>) center center"><?php
+<div class="site-banner position-relative p-3 p-md-5 m-md-3" <?php print $sectionBg; ?>><?php
 	?><div class="bleed-over"><?php
 	?><div class="bleed-over-text text-center"><?php
 		print render($content);
