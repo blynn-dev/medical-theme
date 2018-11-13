@@ -9,23 +9,25 @@
 
     .bleed-over{
         position: relative;
-        background: $bleed;
+        background: #00b3bb;
         width: 80%;
         margin: 300px 0 6% 8%;
         opacity: .9;
         color: #ddd;
         border: 0;
-        height: 365px;
+        height: auto;
+        overflow: hidden;
     }
     
     .bleed-over-text{
         position: relative;
         top: 0;
-        margin: -385px 0 6% 8%;
+        margin: 0 0 6% 8%;
         width: 80%;
         color: #fff;
         padding-left: 10%;
         padding-right: 10%;
+        padding-top: 5%;
         height: auto;
 
         h1{

@@ -32,15 +32,14 @@ $bannerID = drupal_html_id('content');
 
 ?>
 
-<div class="site-banner position-relative p-3 p-md-5 m-md-3 text-center">
+<div class="site-banner position-relative p-3 p-md-5 m-md-3">
       <div class="bleed-over">
-      </div>
-      <div class="bleed-over-text">
-      <h1><?php 
-        print render($content);
-          ?>
-      </h1>
-      <a class="btn" href="#<?php print $bannerID; ?>" class="banner-scroll"><span class="element-invisible">Next section</span><svg class="icon-svg icon-down" viewBox="0 0 32 26" height="26" width="32"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/<?php print drupal_get_path('theme', variable_get('theme_default', NULL)); ?>/img/icons.svg#down"></use></svg></a>
+        <div class="bleed-over-text text-center">
+        <h1><?php 
+          print render($content);
+            ?>
+        </h1>
+        <a class="btn" href="#<?php print $bannerID; ?>" class="banner-scroll"><span class="element-invisible">Next section</span><svg class="icon-svg icon-down" viewBox="0 0 32 26" height="26" width="32"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/<?php print drupal_get_path('theme', variable_get('theme_default', NULL)); ?>/img/icons.svg#down"></use></svg></a>
       </div>
 </div> 
     
