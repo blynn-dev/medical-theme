@@ -89,7 +89,7 @@ hide($content['links']);
 $nodeID = drupal_html_id('node-' . $node->nid);
 
 // Opening markup
-?><div id="<?php print $nodeID; ?>" class="<?php print $classes; ?> container"><?php
+?><div id="<?php print $nodeID; ?>" class="<?php print $classes; ?>"><?php
 print render($title_prefix);
 print render($title_suffix);
 

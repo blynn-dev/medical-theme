@@ -30,11 +30,12 @@ hide($content['field_p_banner_img']);
 // Generate an ID to use for the scroll link
 $bannerID = drupal_html_id('content');
 
-?><div class="banner"><?php
-	?><div class="banner-image"><?php
-		print render($content['field_p_banner_img']);
-	?></div><?php
-	?><div class="banner-content"><div class="shell"><?php
+//$bgSet = trim(strip_tags(render($content['field_p_banner_img'])));
+
+?>
+<div class="site-banner position-relative p-3 p-md-5 m-md-3" style="background: url(<?php //print $bgSet; ?>) center center"><?php
+	?><div class="bleed-over"><?php
+	?><div class="bleed-over-text text-center"><?php
 		print render($content);
 
 		// Print the scroll link

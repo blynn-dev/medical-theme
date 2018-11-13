@@ -16,8 +16,6 @@ body{
 }
 
 .social{
-    margin-top: -20px;
-    padding-bottom: 20px;
 
     .menu{
         margin-left: 90%;
@@ -45,8 +43,13 @@ body{
     }
 }
 
-.region{
-    width: 100%;
+// .region{
+//     width: 100%;
+// }
+
+.theme-black {
+    padding-top: 15px;
+    min-height: 400px;
 }
 
 .container {
@@ -84,6 +87,10 @@ body{
 .copyright{
     font-size: 0.8rem;
     color: $brand;
+}
+
+h3{
+    margin-top: 2rem;
 }
 
 .information{

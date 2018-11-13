@@ -69,18 +69,6 @@
 
 // Global header
 ?><header class="page-header fixed-top" id="header">
-	<div class="shell">
-<nav class="navbar navbar-expand-lg navbar-light justify-content-end" id="topmenu">
-    <ul class="navbar-nav social">
-      <li class="nav-item active">
-        <a class="nav-link" href="#" title="Twitter">T</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#" title="LinkedIn">L</a>
-      </li>
-    </ul>
-</nav>
-   </div>
   </header>
 	<nav id="servier" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
 	<?php
@@ -161,52 +149,6 @@ if ($messages || $renderedTabs || $action_links) {
 
 
 
-<div class="bg-light footer">
-        <div class="px-md-12 container">
-          <div class="my-3 p-3 text-center">
-            <div class="bold-title">Contact Us</div>
-          
-            <p class="lead">For additional information about Servier Pharmaceuticals and to learn<br/>how to collaborate with us, please contact:</p>
-          
-            </div>
-
-            <div class="row foot-border">
-              <div class="col-sm foot-border-right">
-                <h4>Servier Pharmaceuticals</h4>
-                <p>Pier Four, Seaport District<br/>Boston MA, 02110<br/><a href="tel:1-617-555-1212">+ 1 617.555.1212</a></p>
-              </div>
-              <div class="col-sm foot-border-right">
-                <h4>Media Inquiries</h4>
-                <p class="foot-border-bottom">Email: <a href="mailto:media@servierus.com">media@ServierUS.com</a></p>
-                <h4>General Inquiries</h4> 
-                <p>Email: <a href="mailto:info@servierus.com">info@ServierUS.com</a></p>
-              </div>
-              <div class="col-sm">
-                <h4>Sign Up for Updates</h4>
-                
-              </div>
-            </div>
-
-            <div class="row footer-end">
-              <div class="col-lg-3 col-md-6 col-12">
-                <a class="footer-logo" href="#"> 
-				<span class="element-invisible">Servier</span><svg class="icon-svg icon-logo-servier" viewBox="0 0 335 112" height="39" width="105"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/<?php print path_to_theme(); ?>/img/icons.svg#logo-servier"></use></svg>
-                </a>
-                
-              </div>
-              <div class="col-lg-3 col-md-6 col-12">
-                <p>&copy; Servier - Latest update : October 2018. </p>			
-			  </div>
-			  <div class="col-xs-12 col-lg-3 text-left">
-				<a href="#">Terms</a> | <a href="#">Privacy</a>
-			  </div>
-              <div class="col-lg-3 col-md-12 col-12 social">
-                <a href="#" title="Twitter">T</a> <a href="#" title="LinkedIn">L</a>
-              </div>
-            </div>
-
-        </div>
-      </div> 
 
 
 <?php

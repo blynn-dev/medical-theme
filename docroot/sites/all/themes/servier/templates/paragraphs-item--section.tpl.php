@@ -46,7 +46,7 @@ if ($sectionBg != '') {
 	$sectionClass .= ' section-bg';
 }
 
-?><div class="section <?php print $sectionClass; ?>"<?php print $sectionBg; print $sectionID; ?>><?php
+?><div class="section container <?php print $sectionClass; ?>"<?php print $sectionBg; print $sectionID; ?>><?php
 	?><div class="shell"><?php
 		print render($content);
 	?></div><?php
