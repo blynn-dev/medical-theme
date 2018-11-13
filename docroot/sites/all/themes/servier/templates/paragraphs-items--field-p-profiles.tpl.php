@@ -21,7 +21,10 @@
  * @see template_preprocess()
  * @see template_preprocess_paragraphs_items()
  * @see template_process()
- */
+ */ 
+?>
 
-		print $content;
-	?>
+<div class="section row col-12 container">
+        <?php print $content; ?>
+ </div>
+<?php
