@@ -30,21 +30,17 @@ hide($content['field_p_banner_img']);
 // Generate an ID to use for the scroll link
 $bannerID = drupal_html_id('content');
 
-?>
+?><div class="banner"><?php
+	?><div class="banner-image"><?php
+		print render($content['field_p_banner_img']);
+	?></div><?php
+	?><div class="banner-content"><div class="shell"><?php
+		print render($content);
 
-<div class="site-banner position-relative p-3 p-md-5 m-md-3">
-      <div class="bleed-over">
-        <div class="bleed-over-text text-center">
-        <h1><?php 
-          print render($content);
-            ?>
-        </h1>
-        <a class="btn" href="#<?php print $bannerID; ?>" class="banner-scroll"><span class="element-invisible">Next section</span><svg class="icon-svg icon-down" viewBox="0 0 32 26" height="26" width="32"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/<?php print drupal_get_path('theme', variable_get('theme_default', NULL)); ?>/img/icons.svg#down"></use></svg></a>
-      </div>
-</div> 
-    
-
-<?php
+		// Print the scroll link
+		?><div class="align-center"><a href="#<?php print $bannerID; ?>" class="banner-scroll"><span class="element-invisible">Next section</span><svg class="icon-svg icon-down" viewBox="0 0 32 26" height="26" width="32"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/<?php print drupal_get_path('theme', variable_get('theme_default', NULL)); ?>/img/icons.svg#down"></use></svg></a></div><?php
+	?></div></div><?php
+?></div><?php
 
 // Print the (invisible) target for the scroll link
 ?><div id="<?php print $bannerID; ?>"></div><?php

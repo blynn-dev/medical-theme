@@ -47,7 +47,7 @@ if ($sectionBg != '') {
 }
 
 ?><div class="section <?php print $sectionClass; ?>"<?php print $sectionBg; print $sectionID; ?>><?php
-	?><div class="px-md-12 container"><?php
+	?><div class="shell"><?php
 		print render($content);
 	?></div><?php
 ?></div><?php

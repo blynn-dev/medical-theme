@@ -29,6 +29,7 @@ hide($content['field_p_columns_1']);
 hide($content['field_p_columns_2']);
 hide($content['field_p_columns_3']);
 
+<<<<<<< HEAD
 ?>
 
 
@@ -65,3 +66,16 @@ hide($content['field_p_columns_3']);
               </div>
             </div>
 <?php
+=======
+?><div class="columns"><?php
+	?><div class="column"><?php
+		print render($content['field_p_columns_1']);
+	?></div><?php
+	?><div class="column"><?php
+		print render($content['field_p_columns_2']);
+	?></div><?php
+	?><div class="column"><?php
+		print render($content['field_p_columns_3']);
+	?></div><?php
+?></div><?php
+>>>>>>> origin/master
