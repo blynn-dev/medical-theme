@@ -25,6 +25,9 @@
     .foot-border-right+.foot-border-right{
         border-left: 2px solid $brand;
         margin-left: -2rem;
+        margin-right: auto;
+        padding-left: 1rem;
+        padding-right: 0;
     }
     .ghost-button{
         display: block;
