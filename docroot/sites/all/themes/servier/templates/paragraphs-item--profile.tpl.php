@@ -27,9 +27,11 @@
 ?>
 
        <div class="col-lg-4 col-md-6 col-sm-12">
-       <?php
-		print render($content);
-	?>
+        <?php print render($content['field_p_profile_img']); ?>
+
+        <span class="user-name"><?php print render($content['field_p_profile_name']); ?></span>
+
+        <span class="user-title"><?php print render($content['field_p_profile_title']); ?></span>
        </div>
 
 <?php

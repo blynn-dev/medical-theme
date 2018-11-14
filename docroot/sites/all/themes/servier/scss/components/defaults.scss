@@ -140,6 +140,19 @@ filter: contrast(75%);
     }
 }
 
+.user{
+    &-name{
+        font-size: $font-medium;
+        font-weight: bold;
+        display: block;
+    }
+    &-title{
+        font-size: $font-min;
+        display: block;
+        margin-bottom: 1.5rem;
+    }
+}
+
 /*
  * Extra utilities
  */
