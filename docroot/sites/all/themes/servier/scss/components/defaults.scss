@@ -133,6 +133,13 @@ filter: contrast(75%);
     color: #fff;
 }
 
+.foot-border{
+    a{
+        color: $color-link;
+        text-decoration: none;
+    }
+}
+
 /*
  * Extra utilities
  */
