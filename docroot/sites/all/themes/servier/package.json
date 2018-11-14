@@ -10,7 +10,7 @@
     "js:lint": "eslint js/scripts.js",
     "js:minify": "uglifyjs js/scripts.js -m -c -o js/scripts.min.js",
     "build:css": "run-p css:compile && echo CSS build complete | chalk green",
-    "build:js": "run-p js:minify js:lint && echo JS build complete | chalk green",
+    "build:js": "run-p js:minify && echo JS build complete | chalk green",
     "build": "run-p build:css build:js",
     "watch:css": "onchange \"scss/style.scss\" \"scss/*/*.scss\" -i -- npm run build:css",
     "watch:js": "onchange \"js/scripts.js\" -i -- npm run build:js",
