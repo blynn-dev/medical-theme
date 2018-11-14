@@ -243,7 +243,7 @@ h2.bold-title--stripe--invert{
 
 // kill the borders on titles
 @media (max-width: 982px) {
-    .bold-title:before, .bold-title:after, .bold-title-stripe:before, .bold-title-stripe:after{ 
+    .bold-title:before, .bold-title:after, h2.bold-title--stripe:before, h2.bold-title--stripe:after, h2.bold-title--stripe--invert:before, h2.bold-title--stripe--invert:after{ 
         border: 0!important;
     }
-}
+} 
