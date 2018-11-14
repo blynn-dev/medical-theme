@@ -16,9 +16,12 @@
         padding: 5px 0 0 5px;
         text-transform: uppercase;
 
+        &--content{
+            display: none;
+        }
     }
 
-// to be refactored into a real icon for plus and minus
+
     .js-action{
         float: right;
         cursor: pointer;

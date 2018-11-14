@@ -1561,3 +1561,30 @@ jQuery(function($) {
         value: !0
     })
 });
+
+
+jQuery( document ).ready(function() {
+
+	// find action
+	var bind = jQuery(".js-action");
+
+		jQuery(bind).on( 'click', function() {
+
+
+			if ( jQuery(bind).hasClass('open') ) {
+				jQuery(this).removeClass( 'open' );
+				jQuery(this).addClass( 'closed' );
+				jQuery(this).text("+");
+				jQuery(this).parent().next().hide();
+			}
+
+			else if ( jQuery(bind).hasClass('closed') ) {
+				jQuery(this).removeClass( 'closed' );
+				jQuery(this).addClass( 'open' );
+				jQuery(this).text("-");
+				jQuery(this).parent().next().show();
+			}
+
+		});
+
+});
