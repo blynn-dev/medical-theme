@@ -115,6 +115,14 @@ h3{
     margin-left: 50%;
 }
 
+.theme-black{
+filter: contrast(75%);
+}
+
+.theme-black p, .theme-black li{
+    color: #fff;
+}
+
 /*
  * Extra utilities
  */
