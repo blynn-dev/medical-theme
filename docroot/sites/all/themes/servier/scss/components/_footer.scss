@@ -18,6 +18,22 @@
     border-right: 2px solid $brand;
 }
 
+#anchorproducts {
+    .foot-border-right{
+        border-right:0;
+    }
+    .foot-border-right+.foot-border-right{
+        border-left: 2px solid $brand;
+        margin-left: -2rem;
+    }
+    .ghost-button{
+        display: block;
+        color: $palette-accent-teal;
+        border: 1px solid $color-gray;
+        margin-bottom: 12%;
+    }
+}
+
 .footer-end{
     font-size: $title-alt;
     padding-top: 3rem;
