@@ -5,17 +5,18 @@
     padding-bottom: 3rem;
     border-bottom: 8px solid #fff;
 
-    &-right{
-        padding-right: 3rem;
-        margin-right: 3rem;
-        border-right: 2px solid $brand;
-    }
-
     &-bottom{
         margin-bottom: 3rem;
     }
 
 }  
+
+
+.foot-border-right{
+    padding-right: 3rem;
+    margin-right: 3rem;
+    border-right: 2px solid $brand;
+}
 
 .footer-end{
     font-size: $title-alt;

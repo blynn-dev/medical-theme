@@ -1,10 +1,70 @@
 @import "../helpers/variables.scss";    
 
-.bold-title{
-    color: $brand;
+h2.bold-title{
+    color: inherit;
     font-size: $title-size;
     text-transform: uppercase;
 }
+
+h2.bold-title--stripe{
+    font-size: $title-size;
+    text-transform: uppercase;
+    color: inherit;
+    
+    &:before{
+        border-bottom: 2px solid $color-gray-lighter;
+        content: " ";
+        display: initial;
+        position: absolute;
+        left: 16%;
+        margin-top: 17px;
+        z-index: 1;
+        padding: 1px;
+        width: 20%;
+    }
+    &:after{
+        border-bottom: 2px solid $color-gray-lighter;
+        content: " ";
+        display: initial;
+        position: absolute;
+        right: 16%;
+        margin-top: 17px;
+        z-index: 1;
+        padding: 1px;
+        width: 20%;
+    }
+}
+
+h2.bold-title--stripe--invert{
+    color: $color-gray-lighter;
+    font-size: $title-size;
+    text-transform: uppercase;
+    &:before{
+        border-bottom: 2px solid $color-gray-lighter;
+        content: " ";
+        display: initial;
+        position: absolute;
+        left: 16%;
+        margin-top: 17px;
+        z-index: 1;
+        padding: 1px;
+        width: 20%;
+    }
+    &:after{
+        border-bottom: 2px solid $color-gray-lighter;
+        content: " ";
+        display: initial;
+        position: absolute;
+        right: 16%;
+        margin-top: 17px;
+        z-index: 1;
+        padding: 1px;
+        width: 20%;
+    }
+}
+
+
+
 
 .bg-light, .theme-gray{
     background: $light;
@@ -50,33 +110,6 @@
 .bg-none{
     padding-bottom: 15px;
     padding-top: 15px;
-
-    .bold-title-stripe--invert{
-        color: #fff;
-
-        &:before{
-            border-bottom: 2px solid #fff;
-            content: " ";
-            display: initial;
-            position: absolute;
-            left: 16%;
-            margin-top: 17px;
-            z-index: 1;
-            padding: 1px;
-            width: 20%;
-        }
-        &:after{
-            border-bottom: 2px solid #fff;
-            content: " ";
-            display: initial;
-            position: absolute;
-            right: 16%;
-            margin-top: 17px;
-            z-index: 1;
-            padding: 1px;
-            width: 20%;
-        }
-    }
 
     p.lead{
         color: $read;
